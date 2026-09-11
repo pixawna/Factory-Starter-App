@@ -14,7 +14,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Factory Starter App",
-  description: "A foundation for building with Next.js and TypeScript.",
+  description:
+    "A focused Next.js foundation for turning ideas into dependable products.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
