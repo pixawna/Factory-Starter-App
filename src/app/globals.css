@@ -3,11 +3,36 @@
 :root {
   --background: #f3f0e7;
   --foreground: #191a17;
+  --muted: #5e6058;
+  --panel: #dedbcf;
+  --surface: #f3f0e7;
+  --tile: #ffffff;
+  --track: #dedbd0;
+  --grid-line: rgba(25, 26, 23, 0.045);
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --background: #151612;
+  --foreground: #f3f0e7;
+  --muted: #a8aa9f;
+  --panel: #292b26;
+  --surface: #1d1e1b;
+  --tile: #30322c;
+  --track: #3b3d36;
+  --grid-line: rgba(243, 240, 231, 0.055);
+  color-scheme: dark;
 }
 
 @theme inline {
+  --color-accent: #ff4d00;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-panel: var(--panel);
+  --color-surface: var(--surface);
+  --color-tile: var(--tile);
+  --color-track: var(--track);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -25,9 +50,18 @@ body {
 
 .factory-grid {
   background-image:
-    linear-gradient(rgba(25, 26, 23, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(25, 26, 23, 0.045) 1px, transparent 1px);
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   background-size: 32px 32px;
+}
+
+.theme-icon-dark,
+[data-theme="dark"] .theme-icon-light {
+  display: none;
+}
+
+[data-theme="dark"] .theme-icon-dark {
+  display: block;
 }
 
 @media (prefers-reduced-motion: reduce) {
